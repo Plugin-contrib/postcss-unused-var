@@ -1,4 +1,5 @@
 import * as postcss from 'postcss';
+import { transformer as unitTransformer } from './units';
 
 const TransformSelectors = (selector) => {
   let selectorsArray = selector.split(',');
@@ -52,7 +53,11 @@ export default postcss.plugin('postcss-lowercase-props-selectors', () => {
       // Handling selectors
       rule.selector = TransformSelectors(rule.selector);
 
-      // TODO:  units transformation
+      // Handling value's units
+      rule.nodes = rule.nodes.map((node) => {
+        node.value = unitTransformer(node.value);
+        return node;
+      });
     });
   };
 });
