@@ -58,7 +58,31 @@ describe('transforming CSS selectors', () => {
   run(
     'should safely transform the  CSS HTML Selectors to lowercase',
     'UL LI, p A{border: 1px solid black;}',
-    'ul li,p a{border: 1px solid black;}'
+    'ul li, p a{border: 1px solid black;}'
+  );
+
+  run(
+    'should safely transform the  CSS attribute Selectors to lowercase',
+    '[NAME="newname"]{border: 1px solid black;}',
+    '[name="newname"]{border: 1px solid black;}'
+  );
+
+  run(
+    'should safely transform the  CSS attribute Selectors to lowercase',
+    'DIV#antipattern:NTH-child(3).HORSEHAIR [ID="ding"] { color: yellow; }',
+    'div#antipattern:nth-child(3).HORSEHAIR [id="ding"] { color: yellow; }'
+  );
+
+  run(
+    'should safely transform the  CSS pseudo class Selectors to lowercase',
+    'a:FIRST-CHILD{border: 1px solid black;}',
+    'a:first-child{border: 1px solid black;}'
+  );
+
+  run(
+    'should not transform the  CSS :active pseudo class Selectors to lowercase',
+    'a:ACTIVE{border: 1px solid black;}',
+    'a:ACTIVE{border: 1px solid black;}'
   );
 
   run(
