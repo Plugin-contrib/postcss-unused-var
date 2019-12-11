@@ -25,7 +25,7 @@ export const transformer = (str) =>
       selNode._attribute = selNode._attribute.toLowerCase();
     });
     sel.walkPseudos((selNode) => {
-      const normalizeVal = `${selNode.value.toLowerCase()}`;
+      const normalizeVal = selNode.value.toLowerCase();
       if (!caseSensitivePseudoClassesSet.has(normalizeVal)) {
         selNode.value = selNode.value.toLowerCase();
       }

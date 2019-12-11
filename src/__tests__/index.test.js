@@ -68,6 +68,12 @@ describe('transforming CSS selectors', () => {
   );
 
   run(
+    'should safely transform the  CSS attribute Selectors to lowercase',
+    'DIV#antipattern:NTH-child(3).HORSEHAIR [ID="ding"] { color: yellow; }',
+    'div#antipattern:nth-child(3).HORSEHAIR [id="ding"] { color: yellow; }'
+  );
+
+  run(
     'should safely transform the  CSS pseudo class Selectors to lowercase',
     'a:FIRST-CHILD{border: 1px solid black;}',
     'a:first-child{border: 1px solid black;}'
