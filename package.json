@@ -1,7 +1,7 @@
 {
-  "name": "postcss-lowercase-text",
-  "version": "0.4.0",
-  "description": "Postcss plugin to lowercase your CSS selectors and props safely",
+  "name": "postcss-unused-var",
+  "version": "0.1.0",
+  "description": "Postcss plugin remove unused CSS var",
   "main": "dist/index.js",
   "scripts": {
     "test:only": "jest --testMatch \"**/__tests__/**/*.test.js\"",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anikethsaha/postcss-lowercase-text.git"
+    "url": "https://github.com/anikethsaha/postcss-unused-var.git"
   },
   "files": [
     "dist"
@@ -24,7 +24,6 @@
   ],
   "dependencies": {
     "postcss": "^7.0.16",
-    "postcss-selector-parser": "^6.0.2",
     "postcss-value-parser": "^4.0.2"
   },
   "devDependencies": {
@@ -32,9 +31,7 @@
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "cross-env": "^6.0.3",
     "del-cli": "^3.0.0",
-    "html-tags": "^3.1.0",
     "jest": "^24.9.0"
   },
   "author": "anikethsaha <anik220798@gmail.com>",
