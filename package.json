@@ -1,6 +1,6 @@
 {
   "name": "postcss-unused-var",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Postcss plugin remove unused CSS var",
   "main": "dist/index.js",
   "scripts": {
